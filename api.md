@@ -14,7 +14,7 @@
 ]
 ```
 
-#### /api/problem-set/<problemset>/metadata
+#### /api/problem-set/\<problemset\>/metadata
 
  返回指定题库的信息
 
@@ -30,15 +30,15 @@
  }
  ```
 
-#### /api/problem-set/<problemset>/css
+#### /api/problem-set/\<problemset\>/css
 
 返回指定题库的css数据
 
 * problemset: 题库id
 
- #### /api/problem-set/<problemset>/page/<page>
+ #### /api/problem-set/\<problemset\>/page/\<page\>
 
- 返回题库 <problemset> 第 <page> 页的题目
+ 返回题库 \<problemset\> 第 \<page\> 页的题目
 
  * problemset: 题库id
  * page: 页码
@@ -53,7 +53,7 @@
 ]
 ```
 
-#### /api/problem/<problemset>/<problem>
+#### /api/problem/\<problemset\>/\<problem\>
 
 返回指定题目信息
 
