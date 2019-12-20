@@ -1,6 +1,14 @@
 # 前后端交互 API
 
+#### /api/metadata
 
+后端元信息
+
+```json
+{
+	"static": false
+}
+```
 
 #### /api/problem-set-list
 
@@ -36,7 +44,7 @@
 
 * problemset: 题库id
 
- #### /api/problem-set/\<problemset\>/page/\<page\>
+ #### /api/problem-set/\<problemset\>/\<page\>
 
  返回题库 \<problemset\> 第 \<page\> 页的题目
 
@@ -72,6 +80,15 @@
 }
 ```
 
+#### /api/history-list/\<problemset\>/\<problem\>/\<page\>
+
+返回历史版本列表
+
+* page : 页码数
+
+#### /api/history/\<problemset\>/\<problem\>/\<commit-id\>/
+
+返回 \<commit-id\> 版本时的题面数据
 
 
 #### /api/search
