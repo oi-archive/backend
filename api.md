@@ -44,7 +44,7 @@
 
 * problemset: 题库id
 
- #### /api/problem-set/\<problemset\>/\<page\>
+ #### /api/problem-list/\<problemset\>/\<page\>
 
  返回题库 \<problemset\> 第 \<page\> 页的题目
 
@@ -55,9 +55,9 @@
 
 ```json
 [
-	{"pid": "1", "name": "A + B Problem"},
+	{"pid": "1", "title": "A + B Problem"},
 	...
-	{"pid": "101", "name": "最大流"}
+	{"pid": "101", "title": "最大流"}
 ]
 ```
 
