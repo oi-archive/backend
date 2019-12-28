@@ -75,8 +75,7 @@
 	"memory": 512,
 	"judge": "传统",
 	"url":"https://loj.ac/problem",
-	"description_type": "markdown",
-	"description": "# 题目描述\n\n输入 $ a $ 和 $ b $，输出 $ a + b $ 的结果。\n\n# 输入格式\n\n一行两个正整数 $ a $ 和 $ b $。"
+    "description": "<h1>题目描述</h1>\n\n<p>输入 $ a $ 和 $ b $，输出 $ a + b $ 的结果。</p>\n\n<h1>输入格式</h1>\n\n<p>一行两个正整数 $ a $ 和 $ b $。</p>\n\n<h1>输出格式</h1>\n\n<p>一行一个正整数 $ a + b $。</p>\n\n<h1>样例</h1>\n\n<h4>样例输入\r</h4>\n\n<p><code>plain\r\n1 2\r\n</code>\r\n\r</p>\n\n<h4>样例输出\r</h4>\n\n<p><code>plain\r\n3\r\n</code></p>\n\n<h1>数据范围与提示</h1>\n\n<p>对于 $ 100\\% $ 的数据，$ 1 \\leq a, b \\leq 10 ^ 6 $。</p>\n"
 }
 ```
 
