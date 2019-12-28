@@ -4,8 +4,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"gopkg.in/russross/blackfriday.v2"
 	"io/ioutil"
+	"log"
 	"strconv"
+	"strings"
 )
 
 func APIMetadata(c *gin.Context) {
@@ -89,13 +92,59 @@ func APIProblem(c *gin.Context) {
 				ThrowUnknownError(c, fmt.Errorf("error can't parse file %s/%s/main.json : [%w] ", i.Id, problem, err))
 				return
 			}
-			des, err := ioutil.ReadFile(BasePath + "/" + i.Id + "/" + problem + "/description.md")
+			descBytes, err := ioutil.ReadFile(BasePath + "/" + i.Id + "/" + problem + "/description.md")
 			if err != nil {
 				ThrowUnknownError(c, fmt.Errorf("error can't read file %s/%s/description.md : [%w] ", i.Id, problem, err))
 				return
 			}
+			desc := string(descBytes)
 			if res, ok := res.(map[string]interface{}); ok {
-				res["description"] = string(des)
+				descType, ok := res["description_type"]
+				if !ok || descType == "" {
+					descType = "markdown"
+				} else {
+					delete(res, "description_type")
+				}
+				if descType == "html" {
+					lines := strings.Split(desc, "\n")
+					flag := false
+					output := ""
+					if len(lines) > 0 && len(lines[0]) > 0 && lines[0][0] != '#' {
+						flag = true
+						output += `<div class="oiarchive-block">`
+					}
+					for _, j := range lines {
+						if len(j) == 0 {
+							continue
+						}
+						if len(j) < 2 {
+							output += j + "\n"
+							continue
+						}
+						jj := strings.Split(j, " ")
+						if jj[0] == "#" {
+							if flag {
+								output += `</div>` + "\n"
+							}
+							flag = true
+							output += `<div class="oiarchive-block">` + "\n"
+							output += `<h4 class="oiarchive-block-title">` + j[2:] + `</h4>` + "\n"
+						} else {
+							output += j + "\n"
+						}
+					}
+					if flag {
+						output += `</div>` + "\n"
+					}
+					desc = output
+				}
+				if descType == "markdown" {
+					res["description"] = string(blackfriday.Run([]byte(desc)))
+				} else {
+					res["description"] = desc
+				}
+				log.Println(desc)
+				log.Println(res["description"])
 				c.JSON(200, res)
 			} else {
 				ThrowUnknownError(c, fmt.Errorf("error can't parse file %s/%s/main.json", i.Id, problem))
