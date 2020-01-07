@@ -75,7 +75,7 @@
 	"memory": 512,
 	"judge": "传统",
 	"url":"https://loj.ac/problem",
-    "description": "<h1>题目描述</h1>\n\n<p>输入 $ a $ 和 $ b $，输出 $ a + b $ 的结果。</p>\n\n<h1>输入格式</h1>\n\n<p>一行两个正整数 $ a $ 和 $ b $。</p>\n\n<h1>输出格式</h1>\n\n<p>一行一个正整数 $ a + b $。</p>\n\n<h1>样例</h1>\n\n<h4>样例输入\r</h4>\n\n<p><code>plain\r\n1 2\r\n</code>\r\n\r</p>\n\n<h4>样例输出\r</h4>\n\n<p><code>plain\r\n3\r\n</code></p>\n\n<h1>数据范围与提示</h1>\n\n<p>对于 $ 100\\% $ 的数据，$ 1 \\leq a, b \\leq 10 ^ 6 $。</p>\n"
+    "description": "<div class=\"oiarchive-block\"></div>\n<div class=\"oiarchive-block\">\n<h4 class=\"oiarchive-block-title\">题目描述</h4>\n\n<p>输入 $ a $ 和 $ b $，输出 $ a + b $ 的结果。</p>\n\n</div>\n<div class=\"oiarchive-block\">\n<h4 class=\"oiarchive-block-title\">输入格式</h4>\n\n<p>一行两个正整数 $ a $ 和 $ b $。</p>\n\n</div>\n<div class=\"oiarchive-block\">\n<h4 class=\"oiarchive-block-title\">输出格式</h4>\n\n<p>一行一个正整数 $ a + b $。</p>\n\n</div>\n<div class=\"oiarchive-block\">\n<h4 class=\"oiarchive-block-title\">样例</h4>\n\n<h4>样例输入</h4>\n\n<pre><code class=\"language-plain\">1 2\n</code></pre>\n\n<h4>样例输出</h4>\n\n<pre><code class=\"language-plain\">3\n</code></pre>\n\n</div>\n<div class=\"oiarchive-block\">\n<h4 class=\"oiarchive-block-title\">数据范围与提示</h4>\n\n<p>对于 $ 100\\% $ 的数据，$ 1 \\leq a, b \\leq 10 ^ 6 $。</p>\n\n</div>\n"
 }
 ```
 
