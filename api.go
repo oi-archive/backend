@@ -59,7 +59,7 @@ func APIProblemSetPage(c *gin.Context) {
 				})
 				return
 			}
-			c.JSON(200, i.ProblemArray[50*page-49:min(50*page, len(i.ProblemArray))])
+			c.JSON(200, i.ProblemArray[50*page-50:min(50*page, len(i.ProblemArray))])
 			return
 		}
 	}
