@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"gopkg.in/russross/blackfriday.v2"
+	"github.com/oi-archive/blackfriday/v2"
 	"io/ioutil"
 	"log"
 	"strconv"
@@ -123,7 +123,7 @@ func APIProblem(c *gin.Context) {
 					}
 					desc = output
 					log.Println(desc)
-					desc = string(blackfriday.Run([]byte(desc)))
+					desc = string(blackfriday.Run([]byte(desc),blackfriday.WithExtensions(blackfriday.MathJaxSupport)))
 				}
 				if descType != "html_final" {
 					lines := strings.Split(desc, "\n")
