@@ -123,7 +123,7 @@ func APIProblem(c *gin.Context) {
 					}
 					desc = output
 					log.Println(desc)
-					desc = string(blackfriday.Run([]byte(desc),blackfriday.WithExtensions(blackfriday.MathJaxSupport)))
+					desc = string(blackfriday.Run([]byte(desc)))
 				}
 				if descType != "html_final" {
 					lines := strings.Split(desc, "\n")
